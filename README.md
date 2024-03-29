@@ -2,6 +2,8 @@
  
 Tool for a larger project using animateddiff for generative advertisements/music videos (tbd)
 
+https://pypi.org/project/MusicInsights/1.0/
+
 ```
 >>> import MusicInsights as mi
 >>> w = mi.Waveform.Waveform("path\\to\\file.mp3", sample_rate>=8000) # hassle free processing
