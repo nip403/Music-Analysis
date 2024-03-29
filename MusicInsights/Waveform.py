@@ -2,23 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import librosa
 #import crepe
-
-""" JSON {
-    average_tempo (bpm): int,
-    
-    timestamp: {
-        sample_index: int,
-        elapsed_time (s): float, # consider ms for crepe
-        amplitude: float,
-        deviation: float,
-        beat: bool, # separates music into "beat" intervals, potentially generate separate animateddiff per beat segment
-        frequency (from stft): float,
-        pitch (from piptrack): float,
-        mode (major/minor): str,
-    }
-}
-
-"""
+import json
 
 class Waveform:
     def __init__(self, fp: str = None, sample_rate: int = 8000, duration: int = 30):
@@ -50,8 +34,8 @@ class Waveform:
         # how "exciting" the moment is compared to the average moment in the song i suppose
         return self.normalise((self.samples - np.mean(self.samples)) ** 2)
 
-    #def to_json(self, fp: str | None = None):
     
+"""
     def spectrogram_pitch_analysis(self):
         self.S = np.abs(librosa.stft(self.samples, center=False, hop_length=10))
 
@@ -64,7 +48,6 @@ class Waveform:
         fig.colorbar(img, ax=ax, format="%+2.0f dB")
         #plt.xlim([0, len(self.samples) / self.sample_rate])
         
-        plt.xticks(range(len(times)), times)
         
         
         plt.show()
@@ -86,3 +69,4 @@ class Waveform:
         plt.legend()
         plt.grid()
         plt.show()
+        """
