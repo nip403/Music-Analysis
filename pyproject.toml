@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 version = "1.0"
-name = "musicinsights"
+name = "MusicInsights"
 dependencies = [
     "numpy",
     "librosa==0.10.1",
